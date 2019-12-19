@@ -1,6 +1,7 @@
 # -- encoding: UTF-8 --
 
 import re
+import sys
 
 SVG_TEMPLATE = u"""
 <svg height="18" width="90" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +51,10 @@ def simple_response(start_response, content, status_line="200 OK",
     :param content_type: The content type header. Defaults to UTF-8 HTML.
     :return: An iterable of content ready to be returned to the WSGI server.
     """
-    content = unicode(content).encode("UTF-8")
+    if (sys.version_info > (3, 0)):
+        content = str(content).encode("UTF-8")
+    else:
+        content = unicode(content).encode("UTF-8")
     start_response(status_line, [
         ("Content-Length", str(len(content))),
         ("Content-Type", content_type)
