@@ -1,4 +1,4 @@
-This is a Python 2.x WSGI version of https://github.com/fehmicansaglam/progressed.io, so all credit
+This is a Python 3.x WSGI version of https://github.com/fehmicansaglam/progressed.io, so all credit
 for the idea and original implementation is due to Fehmi Can Sağlam.
 
 I wrote it as a little snack of sorts, but it may be useful for understanding how to write very simple
